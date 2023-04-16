@@ -19,13 +19,10 @@ namespace Shopping.Controllers
             _context = context;
         }
 
-        // GET: Countries
         public async Task<IActionResult> Index()
         {
               return View(await _context.Countries.ToListAsync());
         }
-
-        // GET: Countries/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Countries == null)
@@ -42,8 +39,6 @@ namespace Shopping.Controllers
 
             return View(country);
         }
-
-        // GET: Countries/Create
         public IActionResult Create()
         {
             return View();
@@ -102,6 +97,10 @@ namespace Shopping.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Country country)
         {
+            if (id != country.IdCountry)
+            {
+                return NotFound();
+            }
 
             if (ModelState.IsValid)
             {
