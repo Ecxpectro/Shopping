@@ -1,24 +1,15 @@
 ﻿@model Shopping.Data.Entities.Country
 
 @{
-    ViewData["Title"] = "Details";
+	ViewData["Title"] = "Details";
 }
 
 <h1>Detalhes</h1>
 
 <div>
-    <h4>País</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CountryName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CountryName)
-        </dd>
-    </dl>
+	<partial name="PartialViews/_CountryDetails" />
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdCountry" class="btn btn-outline-warning">Editar</a>
-    <a asp-action="Index" class="btn btn-outline-success">Voltar a tabela</a>
+	<a asp-action="Edit" asp-route-id="@Model?.IdCountry" class="btn btn-outline-warning">Editar</a>
+	<a asp-action="Index" class="btn btn-outline-success">Voltar</a>
 </div>
