@@ -9,12 +9,12 @@
 <h4>País</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdCountry" />
-               <partial name="PartialViews/_Country" />
-  
+            <input type="hidden" asp-for="States" />
+               <partial name="PartialViews/_Country" /> 
             <div class="form-group mt-2">
                 <input type="submit" value="Salvar" class="btn btn-outline-primary" />
                 <a asp-action="Index" class="btn btn-outline-success">Voltar</a>
