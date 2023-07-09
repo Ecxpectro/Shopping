@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Shopping.Data.Entities
 {
@@ -11,6 +12,7 @@ namespace Shopping.Data.Entities
 		[MaxLength(50, ErrorMessage = "O campo {0} tem o máximo de {1} caracteres.")]
 		[Required(ErrorMessage = "O campo {0} é obrigatório.")]
 		public string StateName { get; set; }
+		[JsonIgnore]
 		public Country Country { get; set; }
 		public ICollection<City> Cities { get; set; }
 		[Display(Name = "Cidades")]
